@@ -49,7 +49,7 @@ func main() {
 
 	foundHandler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
-		w.Write([]byte("Hello from example application."))
+		w.Write([]byte("Hello from prometheus demo application."))
 	})
 	notfoundHandler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusNotFound)
