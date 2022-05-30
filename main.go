@@ -52,7 +52,7 @@ func main() {
 		w.Write([]byte("Hello from prometheus demo application."))
 	})
 	notfoundHandler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.WriteHeader(http.StatusNotFound)
+		w.WriteHeader(http.StatusInternalServerError)
 	})
 
 	foundChain := promhttp.InstrumentHandlerDuration(
