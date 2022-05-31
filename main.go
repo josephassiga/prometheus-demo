@@ -53,6 +53,7 @@ func main() {
 	})
 	notfoundHandler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusInternalServerError)
+		w.Write([]byte("Hello 5XX Errors."))
 	})
 
 	foundChain := promhttp.InstrumentHandlerDuration(
