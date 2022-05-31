@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -54,6 +55,7 @@ func main() {
 	notfoundHandler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusInternalServerError)
 		w.Write([]byte("Hello 5XX Errors."))
+		fmt.Sprintf("Hello 5XX Errors.")
 	})
 
 	foundChain := promhttp.InstrumentHandlerDuration(
